@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vivliostyle preview manuscript.md --style styles/style.css",
     "build:pdf": "vivliostyle build manuscript.md --style styles/style.css --output dist/book.pdf",
-    "build:html": "vivliostyle build manuscript.md --style styles/style.css --output dist/index.html",
+    "build:html": "vivliostyle build manuscript.md --style styles/style.css --output dist/site && mv dist/site/manuscript.html dist/site/index.html && touch dist/site/.nojekyll",
     "build": "npm run build:pdf && npm run build:html"
   },
   "author": "",

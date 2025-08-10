@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "駄菓子屋の再発明",
+  "inLanguage": "ja",
+  "dateModified": "2025-08-10T16:52:40.540Z",
+  "readingOrder": [
+    {
+      "url": "manuscript.html",
+      "name": "駄菓子屋の再発明"
+    }
+  ],
+  "resources": [
+    {
+      "rel": "cover",
+      "url": "cover.md",
+      "name": "Cover image",
+      "encodingFormat": "text/markdown"
+    },
+    "dist/index.html/images/sample.png",
+    "dist/index.html/manuscript.html",
+    "dist/index.html/publication.json",
+    "dist/index.html/styles/style.css",
+    "images/sample.png",
+    "styles/style.css"
+  ],
+  "links": []
+}
