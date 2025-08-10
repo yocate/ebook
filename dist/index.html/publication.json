@@ -5,13 +5,13 @@
   ],
   "type": "Book",
   "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
-  "name": "サンプル書籍タイトル",
+  "name": "駄菓子屋の再発明",
   "inLanguage": "ja",
-  "dateModified": "2025-08-10T13:59:56.821Z",
+  "dateModified": "2025-08-10T15:49:09.009Z",
   "readingOrder": [
     {
       "url": "manuscript.html",
-      "name": "サンプル書籍タイトル"
+      "name": "駄菓子屋の再発明"
     }
   ],
   "resources": [

@@ -119,3 +119,9 @@ pre {
   border-top: 0.2mm solid #ddd;
   padding-top: 4mm;
 }
+
+/* ===== ページ区切り ===== */
+.page-break {
+  break-before: page;        /* Vivliostyle / CSS Paged Media 対応 */
+  page-break-before: always; /* 古いブラウザや互換性用 */
+}
