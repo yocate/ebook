@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "name": "サンプル書籍タイトル",
+  "inLanguage": "ja",
+  "dateModified": "2025-08-10T13:59:56.821Z",
+  "readingOrder": [
+    {
+      "url": "manuscript.html",
+      "name": "サンプル書籍タイトル"
+    }
+  ],
+  "resources": [
+    {
+      "rel": "cover",
+      "url": "cover.md",
+      "name": "Cover image",
+      "encodingFormat": "text/markdown"
+    },
+    "images/sample.png",
+    "styles/style.css"
+  ],
+  "links": []
+}

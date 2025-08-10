@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>サンプル書籍タイトル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="著者名">
+    <meta name="date" content="2025-08-10">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="まえがき">
+      <h1 id="まえがき">まえがき</h1>
+      <p>本テンプレートは <strong>Markdown → Vivliostyle → PDF/HTML</strong> を一発ビルドし、GitHub Actionsで自動生成・公開できるように設計されています。</p>
+      <section class="level2" aria-labelledby="本書の構成">
+        <h2 id="本書の構成">本書の構成</h2>
+        <ul>
+          <li>第1章 テンプレートの使い方</li>
+          <li>第2章 文章スタイルと組版の基本</li>
+          <li>第3章 付録</li>
+        </ul>
+        <hr>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="第1章-テンプレートの使い方">
+      <h1 id="第1章-テンプレートの使い方">第1章 テンプレートの使い方</h1>
+      <p>原稿は Markdown で書きます。画像は <code>images/</code> など任意のフォルダに配置し、相対パスで参照します。</p>
+      <pre class="language-markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">図1 サンプル画像</span>](<span class="token url">images/sample.png</span>)</span></code></pre>
+      <section class="level2" aria-labelledby="目次">
+        <h2 id="目次">目次</h2>
+        <p><code>vivliostyle.config.js</code> の <code>toc: true</code> により自動生成されます。</p>
+        <hr>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="第2章-文章スタイルと組版の基本">
+      <h1 id="第2章-文章スタイルと組版の基本">第2章 文章スタイルと組版の基本</h1>
+      <p>本文は <strong>Noto Sans JP</strong>（またはCJK版）を優先使用します。見出しや本文の字面・余白は <code>styles/style.css</code> で調整可能です。</p>
+      <section class="level3" aria-labelledby="箇条書き">
+        <h3 id="箇条書き">箇条書き</h3>
+        <ul>
+          <li>箇条書き1</li>
+          <li>箇条書き2</li>
+        </ul>
+      </section>
+      <section class="level3" aria-labelledby="表">
+        <h3 id="表">表</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>値</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>サンプル</td>
+              <td>123</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="第3章-付録">
+      <h1 id="第3章-付録">第3章 付録</h1>
+      <ul>
+        <li>ライセンスや奥付はここに記載してください。</li>
+        <li>CIの設定は <code>.github/workflows/build.yml</code> を確認。</li>
+      </ul>
+    </section>
+  </body>
+</html>
