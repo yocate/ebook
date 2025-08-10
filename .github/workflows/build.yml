@@ -2,27 +2,65 @@ name: Build Book
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] # main に push されたら自動ビルド
+  workflow_dispatch:     # 手動実行も可
+
+# GitHub Pages への書き込みや artifact の公開に必要な権限を明示
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # ランナーはログに出ていた環境に合わせて 24.04 を明示
+    runs-on: ubuntu-24.04
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        # v4 を使用（最新版・推奨）
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        # v4 を使用。Node 20 を利用（Vivliostyle CLI が安定）
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm' # package-lock.json があれば npm キャッシュが効く
+
+      - name: Install system fonts (Noto for CJK)
+        # PDF 組版で日本語が豆腐にならないように Noto フォントを導入
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto
 
       - name: Install dependencies
-        run: npm install -g @vivliostyle/cli
+        # lockfile があれば再現性の高い npm ci、無ければ npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
-      - name: Build PDF
-        run: vivliostyle build manuscript.md --output mybook.pdf
+      - name: Build PDF & HTML
+        # package.json の scripts を利用して dist/ に成果物を出力
+        run: npm run build
 
-      - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact (dist)
+        # ★ ここを v4 に更新（v3 は廃止）
+        uses: actions/upload-artifact@v4
         with:
-          name: book-pdf
-          path: mybook.pdf
+          name: book-dist
+          path: dist/
+
+      - name: Deploy to GitHub Pages (gh-pages)
+        # main ブランチのときだけ gh-pages へ公開
+        if: ${{ github.ref == 'refs/heads/main' }}
+        # Pages 公式アクションでも良いが、ここでは従来通り peaceiris を使用
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true  # 履歴切り離し。Pages 用に履歴を軽く保つ
