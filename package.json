@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "@vivliostyle/cli": "^8.12.0"
+  },
+  "dependencies": {
+    "@vivliostyle/theme-bunko": "^2.0.1"
   }
 }

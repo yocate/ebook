@@ -1,0 +1,120 @@
+/* カスタムページ設定 */
+
+/* テーマ設定の上書き */
+:root {
+  /* 文字数と行数の設定 */
+  --vs-theme--num-of-line: 15;           /* 1ページあたり15行 */
+  --vs-theme--num-of-character: 42;      /* 1行あたり42文字（39→42に変更） */
+  
+  /* フォント設定 - Noto Serif JPを優先（縦型最適化） */
+  --base-font: "Noto Serif CJK JP", "Noto Serif JP", "Noto Serif", "Yu Mincho", "Hiragino Mincho ProN", "HGS明朝E", serif;
+  
+  /* 行間の調整（縦型に最適化） */
+  --vs-line-height: 2.0;                 /* 行間を2.0倍に調整（縦型に最適） */
+  
+  /* 縦型用の文字間隔調整 */
+  --vs-letter-spacing: 0.05em;           /* 文字間隔を少し広げる */
+}
+
+/* 全体のフォントをNoto Serif JPに変更 */
+html, body {
+  font-family: var(--base-font) !important;
+  /* 縦書き設定 */
+  writing-mode: vertical-rl !important;        /* 縦書き（右から左） */
+  text-orientation: mixed !important;          /* 英数字は横向き（90度回転） */
+  /* 縦型最適化のための追加設定 */
+  text-rendering: optimizeLegibility;     /* 文字の可読性を最適化 */
+  -webkit-font-feature-settings: "liga" 1, "kern" 1; /* リガチャとカーニングを有効化 */
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* 見出しのフォントもNoto Serif JPに */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--base-font) !important;
+  /* 縦書き設定 */
+  writing-mode: vertical-rl !important;        /* 見出しも縦書き */
+  text-orientation: mixed !important;          /* 英数字は横向き */
+  /* 縦型見出しの最適化 */
+  font-weight: 600 !important;           /* セリフ体に適した太さ */
+  letter-spacing: 0.1em !important;      /* 見出しの文字間隔 */
+}
+
+/* 段落のフォントもNoto Serif JPに */
+p {
+  font-family: var(--base-font) !important;
+  /* 縦書き設定 */
+  writing-mode: vertical-rl !important;        /* 段落も縦書き */
+  text-orientation: mixed !important;          /* 英数字は横向き */
+  /* 縦型段落の最適化 */
+  text-align: justify !important;        /* 両端揃え（縦型に最適） */
+  text-justify: inter-ideograph !important; /* 日本語の両端揃え */
+}
+
+/* ページ下部の要素を制御 */
+@page {
+  /* 下マージンを最小限に */
+  margin-bottom: 5mm !important;
+  
+  /* フッター（ページ番号など）を完全に非表示 */
+  @bottom-center {
+    content: none !important;
+  }
+  
+  @bottom-left {
+    content: none !important;
+  }
+  
+  @bottom-right {
+    content: none !important;
+  }
+  
+  /* ヘッダーも必要に応じて制御 */
+  @top-center {
+    content: none !important;
+  }
+  
+  @top-left {
+    content: none !important;
+  }
+  
+  @top-right {
+    content: none !important;
+  }
+}
+
+/* 特定の要素の下マージンを調整 */
+h1, h2, h3, h4 {
+  margin-bottom: 2mm !important; /* 見出しの下マージンを最小限に */
+}
+
+p {
+  margin-bottom: 1mm !important; /* 段落の下マージンを最小限に */
+}
+
+/* 表紙ページの特別設定 */
+@page :first {
+  margin-bottom: 2mm !important; /* 表紙の下マージンを最小限に */
+  margin-top: 30mm !important;   /* 表紙の上マージンを増やす */
+}
+
+/* 本文ページの特別設定 */
+@page :not(:first) {
+  margin-top: 25mm !important;   /* 本文の上マージン */
+  margin-bottom: 5mm !important; /* 本文の下マージン */
+}
+
+/* 最後のページの設定 */
+@page :last {
+  margin-bottom: 2mm !important; /* 最後のページの下マージンを最小限に */
+}
+
+/* 縦型最適化のための追加設定 */
+/* 約物（句読点など）の調整 */
+:lang(ja) {
+  hanging-punctuation: first allow-end;  /* 段落先頭の約物を調整 */
+}
+
+/* 和欧文間のスペース調整 */
+:lang(ja) {
+  text-spacing: space-first allow-end ideograph-alpha ideograph-numeric;
+}
