@@ -8,7 +8,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap'); */
 
 :root {
-  --base-font: "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --base-font: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
 }
 
 html, body {
@@ -16,18 +16,25 @@ html, body {
   font-size: 10.5pt;
   line-height: 1.7;
   color: #222;
+  /* 縦書き設定 */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 /* ===== ページ設定 ===== */
 @page {
-  size: A5;
-  margin: 18mm 16mm 20mm 16mm;
-
+  /* 縦書き用のページ設定 */
+  size: A5 portrait; /* 縦向きA5 */
+  margin: 16mm 18mm 12mm 10mm; /* 右・上・左・下の順（縦書き） */
+  
+  /* 縦書き用のノンブル位置 */
   @bottom-center {
     content: counter(page);
     font-family: var(--base-font);
     font-size: 9pt;
     color: #666;
+    /* 縦書き用のノンブル配置 */
+    transform: rotate(90deg);
   }
 }
 
@@ -49,18 +56,27 @@ html, body {
   text-align: center;
   page: cover;
   background: #f9efe5;
+  /* 縦書き用の調整 */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .cover-title {
   font-size: 28pt;
   font-weight: 700;
   letter-spacing: 0.03em;
+  /* 縦書き用の調整 */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .cover-author {
   margin-top: 8mm;
   font-size: 12pt;
   color: #555;
+  /* 縦書き用の調整 */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 /* ===== 見出し ===== */
@@ -68,6 +84,9 @@ h1, h2, h3, h4 {
   font-family: var(--base-font);
   line-height: 1.4;
   break-after: avoid-page;
+  /* 縦書き用の調整 */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 h1 { font-size: 18pt; margin: 12mm 0 6mm; }

@@ -5,24 +5,43 @@
   ],
   "type": "Book",
   "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
-  "name": "駄菓子屋の再発明",
+  "name": "なぜ、僕らは「駄菓子屋」を始めたのか",
   "inLanguage": "ja",
-  "dateModified": "2025-08-11T19:41:59.283Z",
+  "dateModified": "2025-08-15T09:48:52.969Z",
   "readingOrder": [
     {
       "url": "manuscript.html",
-      "name": "駄菓子屋の再発明"
+      "name": "なぜ、僕らは「駄菓子屋」を始めたのか"
     }
   ],
   "resources": [
+    "cover.html",
     {
       "rel": "cover",
       "url": "cover.md",
       "name": "Cover image",
       "encodingFormat": "text/markdown"
     },
+    "custom.css",
     "images/sample.png",
-    "styles/style.css"
+    "styles/style.css",
+    "themes/packages/@vivliostyle/theme-base/css/common/basic.css",
+    "themes/packages/@vivliostyle/theme-base/css/common/meta-properties.css",
+    "themes/packages/@vivliostyle/theme-base/css/common/reset.css",
+    "themes/packages/@vivliostyle/theme-base/css/lib/prism/base.css",
+    "themes/packages/@vivliostyle/theme-base/css/lib/prism/theme-okaidia.css",
+    "themes/packages/@vivliostyle/theme-base/css/lib/prism/theme-prism.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/crossref.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/endnote.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/footnote-external-link.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/footnote.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/page.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/section.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/toc.css",
+    "themes/packages/@vivliostyle/theme-base/css/partial/utility-classes.css",
+    "themes/packages/@vivliostyle/theme-base/theme-all.css",
+    "themes/packages/@vivliostyle/theme-base/theme-basic.css",
+    "themes/packages/@vivliostyle/theme-bunko/theme.css"
   ],
   "links": []
 }
