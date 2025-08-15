@@ -18,14 +18,14 @@ html, body {
   color: #222;
   /* 縦書き設定 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
 }
 
 /* ===== ページ設定 ===== */
 @page {
   /* 縦書き用のページ設定 */
   size: A5 portrait; /* 縦向きA5 */
-  margin: 16mm 18mm 12mm 10mm; /* 右・上・左・下の順（縦書き） */
+  margin: 16mm 40mm 12mm 20mm; /* 右・上・左・下の順（縦書き） */
   
   /* 縦書き用のノンブル位置 */
   @bottom-center {
@@ -58,7 +58,7 @@ html, body {
   background: #f9efe5;
   /* 縦書き用の調整 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
 }
 
 .cover-title {
@@ -67,7 +67,7 @@ html, body {
   letter-spacing: 0.03em;
   /* 縦書き用の調整 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
 }
 
 .cover-author {
@@ -76,7 +76,7 @@ html, body {
   color: #555;
   /* 縦書き用の調整 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
 }
 
 /* ===== 見出し ===== */
@@ -86,7 +86,7 @@ h1, h2, h3, h4 {
   break-after: avoid-page;
   /* 縦書き用の調整 */
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
 }
 
 h1 { font-size: 18pt; margin: 12mm 0 6mm; }
