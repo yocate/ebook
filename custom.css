@@ -90,31 +90,3 @@ h1, h2, h3, h4 {
 p {
   margin-bottom: 1mm !important; /* 段落の下マージンを最小限に */
 }
-
-/* 表紙ページの特別設定 */
-@page :first {
-  margin-bottom: 2mm !important; /* 表紙の下マージンを最小限に */
-  margin-top: 30mm !important;   /* 表紙の上マージンを増やす */
-}
-
-/* 本文ページの特別設定 */
-@page :not(:first) {
-  margin-top: 25mm !important;   /* 本文の上マージン */
-  margin-bottom: 5mm !important; /* 本文の下マージン */
-}
-
-/* 最後のページの設定 */
-@page :last {
-  margin-bottom: 2mm !important; /* 最後のページの下マージンを最小限に */
-}
-
-/* 縦型最適化のための追加設定 */
-/* 約物（句読点など）の調整 */
-:lang(ja) {
-  hanging-punctuation: first allow-end;  /* 段落先頭の約物を調整 */
-}
-
-/* 和欧文間のスペース調整 */
-:lang(ja) {
-  text-spacing: space-first allow-end ideograph-alpha ideograph-numeric;
-}
